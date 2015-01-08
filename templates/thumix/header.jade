@@ -1,9 +1,9 @@
 div(tabs)
   .dropdown
-    button#dLabel(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
-        | Dropdown trigger
-        span.caret
-      ul.dropdown-menu(role='menu', aria-labelledby='dLabel')
-        | ...
+    div#dLabel(tab="fileMenu", data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+        | ファイル
+      ul.dropdown-menu(menuList="file", role='menu', aria-labelledby='dLabel')
+        li(fileMenu="new", data-js="newFile")
+            | 新規ファイル
 
 

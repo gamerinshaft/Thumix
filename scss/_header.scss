@@ -1,5 +1,5 @@
 section[parts="header"]{
-  height: 22px;
+  height: 26px;
   width: 100%;
   box-shadow: -1px -1px 10px 1px rgba(0,0,0,0.8);
   background: rgb(50,50,50); /* Old browsers */
@@ -12,7 +12,7 @@ section[parts="header"]{
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgb(50,50,50)', endColorstr='rgb(40,40,40)',GradientType=0 ); /* IE6-9 */
 }
 div[tabs]{
-  padding: 0px 30px;
+  padding: 0px 130px;
 }
 [tab]{
   color: #ccc;
@@ -21,4 +21,14 @@ div[tabs]{
   font-family: monospace;
   vertical-align: top;
   cursor: pointer;
+  padding: 0 7px;
+  line-height: 25px;
+  font-size: 13px
+}
+[menuList]{
+  border-radius: 0px 0px 5px 5px;
+  padding: 5px 20px;
+  width: 200px;
+  cursor: pointer;
+  background-color: rgba(255,255,255,0.9);
 }
