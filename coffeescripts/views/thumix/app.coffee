@@ -1,4 +1,4 @@
-define ['jquery', 'backbone', 'templates/thumix/app', 'views/thumix/header', 'views/thumix/field'], ($, Backbone,  template, HeaderView, FieldView) ->
+define ['jquery', 'backbone', 'templates/thumix/app', 'views/thumix/field'], ($, Backbone,  template, FieldView) ->
   class AppView extends Backbone.View
     initialize: (opitons) ->
       aa =
@@ -7,11 +7,11 @@ define ['jquery', 'backbone', 'templates/thumix/app', 'views/thumix/header', 'vi
         '
       console.log(aa)
       @renderBoards()
-
-      new HeaderView(el: $('[data-js=header]'));
       new FieldView(el: $('[data-js=field]'));
+
     events:
      'click [data-js=destroy]' : 'destroy'
+
     renderBoards: ->
       @$el.html template
 
