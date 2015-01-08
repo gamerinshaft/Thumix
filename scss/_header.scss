@@ -10,3 +10,14 @@ section[parts="header"]{
   background: linear-gradient(to bottom, rgb(50,50,50) 0%,rgb(40,40,40) 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgb(50,50,50)', endColorstr='rgb(40,40,40)',GradientType=0 ); /* IE6-9 */
 }
+div[tabs]{
+  padding: 0px 30px;
+}
+div[tab]{
+  color: #ccc;
+  display: inline-block;
+  height: 100%;
+  font-family: monospace;
+  vertical-align: top;
+  cursor: pointer;
+}

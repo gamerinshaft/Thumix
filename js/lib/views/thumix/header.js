@@ -15,15 +15,15 @@ define(['jquery', 'backbone', 'templates/thumix/header'], function($, Backbone, 
     };
 
     HeaderView.prototype.events = {
-      'click [data-js=destroy]': 'destroy'
+      'click [data-js=file]': 'createCanvas'
     };
 
     HeaderView.prototype.renderBoards = function() {
       return this.$el.html(template);
     };
 
-    HeaderView.prototype.destroy = function() {
-      return console.log('×ボタンが押されました');
+    HeaderView.prototype.createCanvas = function() {
+      return console.log('新しいキャンバスを生成します。');
     };
 
     return HeaderView;
