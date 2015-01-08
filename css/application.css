@@ -3,6 +3,17 @@ html, body {
   width: 100%;
   height: 100%; }
 
+[table] {
+  display: table;
+  width: 100%;
+  height: 100%; }
+
+[table-cell] {
+  display: table-cell; }
+
+[table-cell="middle"] {
+  vertical-align: middle; }
+
 section[parts="header"] {
   height: 26px;
   width: 100%;
