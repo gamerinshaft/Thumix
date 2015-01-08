@@ -25,7 +25,7 @@ gulp.task 'coffee', ->
 gulp.task 'sass', ->
   gulp
   .src 'scss/*.scss'
-  .pipe sass()
+  .pipe sass errLogToConsole: true
   .pipe gulp.dest 'css'
 
 gulp.task 'jade', ->

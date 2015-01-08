@@ -1,7 +1,7 @@
 html, body {
   margin: 0;
   width: 100%;
-  min-height: 100%; }
+  height: 100%; }
 
 section[parts="header"] {
   height: 22px;
@@ -22,3 +22,12 @@ section[parts="header"] {
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgb(50,50,50)', endColorstr='rgb(40,40,40)',GradientType=0 );
   /* IE6-9 */ }
+
+section[parts="field"] {
+  background-color: whitesmoke;
+  height: 100%;
+  width: 100%; }
+
+section[parts="app"] {
+  height: 100%;
+  overflow: hidden; }

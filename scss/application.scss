@@ -1,2 +1,8 @@
 @import "setting";
 @import "header";
+@import "field";
+
+section[parts="app"]{
+  height: 100%;
+  overflow: hidden;
+}
