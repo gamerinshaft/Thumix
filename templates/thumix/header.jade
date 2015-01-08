@@ -1,3 +1,9 @@
 div(tabs)
-  div(tab="file" data-js="file").
-    ファイル
+  .dropdown
+    button#dLabel(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+        | Dropdown trigger
+        span.caret
+      ul.dropdown-menu(role='menu', aria-labelledby='dLabel')
+        | ...
+
+

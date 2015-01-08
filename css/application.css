@@ -27,7 +27,7 @@ section[parts="header"] {
 div[tabs] {
   padding: 0px 30px; }
 
-div[tab] {
+[tab] {
   color: #ccc;
   display: inline-block;
   height: 100%;
