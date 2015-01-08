@@ -47,3 +47,4 @@ gulp.task 'jade', ->
 gulp.task 'watch', ->
   gulp.watch 'coffeescripts/**', ['coffee']
   gulp.watch ['index.jade', 'templates/**'], ['jade']
+  gulp.watch 'scss/**', ['sass']
