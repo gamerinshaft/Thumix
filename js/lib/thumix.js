@@ -7,9 +7,9 @@ require.config({
   }
 });
 
-require(['jquery', 'views/thumix/base'], function($, BaseView) {
+require(['jquery', 'views/thumix/app'], function($, AppView) {
   return $(function() {
-    return new BaseView({
+    return new AppView({
       el: $('[data-js=app]')
     });
   });

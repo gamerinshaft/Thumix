@@ -5,6 +5,6 @@ require.config
     backbone: '../../bower_components/backbone/backbone'
     jade: '../../bower_components/jade/runtime'
 
-require ['jquery', 'views/thumix/base'], ($, BaseView) ->
+require ['jquery', 'views/thumix/app'], ($, AppView) ->
   $ ->
-    new BaseView(el: $('[data-js=app]'));
+    new AppView(el: $('[data-js=app]'));

@@ -5,7 +5,7 @@ var buf = [];
 var jade_mixins = {};
 var jade_interp;
 
-buf.push("<div class=\"hoge\">Thumix</div>");;return buf.join("");
+buf.push("<field class=\"jade\"></field>");;return buf.join("");
 };
 
 });
