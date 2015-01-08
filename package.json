@@ -1,0 +1,15 @@
+{
+  "name": "Thumix",
+  "version": "0.0.1",
+  "description": "This service can do image collage on browser.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Thumix"
+  },
+  "author": "gamerinshaft",
+  "license": "ISC"
+}
