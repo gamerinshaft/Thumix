@@ -1,0 +1,12 @@
+section[parts="header"]{
+  height: 22px;
+  width: 100%;
+  background: rgb(50,50,50); /* Old browsers */
+  background: -moz-linear-gradient(top, rgb(50,50,50) 0%, rgb(40,40,40) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(50,50,50)), color-stop(100%,rgb(40,40,40))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgb(50,50,50) 0%,rgb(40,40,40) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgb(50,50,50) 0%,rgb(40,40,40) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgb(50,50,50) 0%,rgb(40,40,40) 100%); /* IE10+ */
+  background: linear-gradient(to bottom, rgb(50,50,50) 0%,rgb(40,40,40) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgb(50,50,50)', endColorstr='rgb(40,40,40)',GradientType=0 ); /* IE6-9 */
+}
