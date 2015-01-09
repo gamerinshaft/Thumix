@@ -2,8 +2,10 @@
 @import "field";
 @import "header";
 @import "canvas";
+@import "tool";
 
-section[parts="app"]{
+section[module="app"]{
   height: 100%;
+  width: 100%;
   overflow: hidden;
 }
