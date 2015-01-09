@@ -72,6 +72,41 @@ section[module="toolBox"] {
   border-radius: 3px 3px 0px 0px;
   border: solid 1px black; }
 
+section[module="toolBox"] [parts="header"] {
+  height: 14px;
+  border-top: solid 1px rgba(200, 200, 200, 0.4);
+  border-radius: 3px 3px 0px 0px;
+  width: 100%;
+  box-sizing: border-box;
+  background: #343434;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #323232 0%, #282828 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #323232), color-stop(100%, #282828));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #323232 0%, #282828 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #323232 0%, #282828 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #323232 0%, #282828 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #323232 0%, #282828 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgb(50,50,50)', endColorstr='rgb(40,40,40)',GradientType=0 );
+  /* IE6-9 */ }
+section[module="toolBox"] [function="acceptBox"] {
+  font-size: 12px;
+  text-align: center;
+  border: solid 1px #555;
+  padding: 15px;
+  box-sizing: border-box;
+  margin: 5%;
+  width: 90%;
+  color: #ccc;
+  height: 150px;
+  display: inline-block;
+  vertical-align: middle; }
+
 section[module="app"] {
   height: 100%;
   width: 100%;
