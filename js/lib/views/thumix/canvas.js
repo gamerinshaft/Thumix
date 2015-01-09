@@ -10,12 +10,22 @@ define(['jquery', 'backbone', 'templates/thumix/canvas'], function($, Backbone, 
       return CanvasView.__super__.constructor.apply(this, arguments);
     }
 
-    CanvasView.prototype.initialize = function(opitons) {
-      return this.renderBoards();
+    CanvasView.prototype.initialize = function(options) {
+      this.width = options.width;
+      this.height = options.height;
+      this.renderBoards();
+      return this.addProperty;
     };
 
     CanvasView.prototype.renderBoards = function() {
       return this.$el.html(template);
+    };
+
+    CanvasView.prototype.addProperty = function() {
+      return this.$el.css({
+        width: this.width,
+        height: this.height
+      });
     };
 
     return CanvasView;

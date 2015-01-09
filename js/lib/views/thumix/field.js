@@ -10,7 +10,7 @@ define(['jquery', 'backbone', 'views/thumix/header', 'templates/thumix/field'], 
       return FieldView.__super__.constructor.apply(this, arguments);
     }
 
-    FieldView.prototype.initialize = function(opitons) {
+    FieldView.prototype.initialize = function(options) {
       this.renderBoards();
       return new HeaderView({
         el: $('[data-js=header]')

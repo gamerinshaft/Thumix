@@ -12,8 +12,8 @@ define(['jquery', 'backbone', 'views/thumix/canvas'], function($, Backbone, Canv
 
     FileMenuView.prototype.initialize = function(opitons) {
       this.$window = $(window);
-      this.wHeight = parseInt(this.$window.height());
-      return this.wWidth = parseInt(this.$window.width());
+      this.cHeight = parseInt(this.$window.height() * 0.8);
+      return this.cWidth = parseInt(this.$window.width() * 0.8);
     };
 
     FileMenuView.prototype.events = {
@@ -25,7 +25,9 @@ define(['jquery', 'backbone', 'views/thumix/canvas'], function($, Backbone, Canv
       e.preventDefault();
       console.log(this.wHeight + "," + this.wWidth);
       return new CanvasView({
-        el: $('[data-js=canvas]')
+        el: $('[data-js=canvas]'),
+        height: this.cHeight,
+        width: this.cWidth
       });
     };
 

@@ -1,6 +1,6 @@
 define ['jquery', 'backbone', 'views/thumix/tool'], ($, Backbone, ToolView) ->
   class WindowMenuView extends Backbone.View
-    initialize: (opitons) ->
+    initialize: (options) ->
 
     events:
       'click [data-js=showTool]' : 'showTool'
