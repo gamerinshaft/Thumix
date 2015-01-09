@@ -10,7 +10,11 @@ define(['jquery', 'backbone', 'views/thumix/canvas'], function($, Backbone, Canv
       return FileMenuView.__super__.constructor.apply(this, arguments);
     }
 
-    FileMenuView.prototype.initialize = function(opitons) {};
+    FileMenuView.prototype.initialize = function(opitons) {
+      this.$window = $(window);
+      this.wHeight = parseInt(this.$window.height());
+      return this.wWidth = parseInt(this.$window.width());
+    };
 
     FileMenuView.prototype.events = {
       'click [data-js=newFile]': 'createCanvas'
@@ -19,6 +23,7 @@ define(['jquery', 'backbone', 'views/thumix/canvas'], function($, Backbone, Canv
     FileMenuView.prototype.createCanvas = function(e) {
       e.stopPropagation();
       e.preventDefault();
+      console.log(this.wHeight + "," + this.wWidth);
       return new CanvasView({
         el: $('[data-js=canvas]')
       });
