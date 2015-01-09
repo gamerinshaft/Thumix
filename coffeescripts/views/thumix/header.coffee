@@ -1,14 +1,10 @@
-define ['jquery', 'backbone', 'templates/thumix/header', 'views/thumix/canvas'], ($, Backbone,  template, CanvasView) ->
+define ['jquery', 'backbone', 'templates/thumix/header', 'views/thumix/fileMenu', 'views/thumix/windowMenu'], ($, Backbone,  template, FileMenuView, WindowMenuView) ->
   class HeaderView extends Backbone.View
     initialize: (opitons) ->
       @renderBoards()
+      new FileMenuView(el: $('[data-js=fileMenu]'))
+      new WindowMenuView(el: $('[data-js=windowMenu]'))
 
-    events:
-      'click [data-js=newFile]' : 'createCanvas'
     renderBoards: ->
       @$el.html template
 
-    createCanvas: (e)->
-      e.stopPropagation();
-      e.preventDefault();
-      new CanvasView(el: $('[data-js=canvas]'))

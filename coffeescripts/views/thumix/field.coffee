@@ -4,11 +4,6 @@ define ['jquery', 'backbone', 'views/thumix/header', 'templates/thumix/field'], 
       @renderBoards()
       new HeaderView(el: $('[data-js=header]'));
 
-    events:
-      'click [data-js=destroy]' : 'destroy'
-
     renderBoards: ->
       @$el.html template
 
-    destroy: ->
-      console.log '×ボタンが押されました'

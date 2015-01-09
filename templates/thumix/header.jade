@@ -2,14 +2,14 @@ div(tabs)
   .dropdown.pull-left
     div#fileLabel(tab="fileMenu", data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
         | ファイル
-      ul.dropdown-menu(menuList="file", role='menu', aria-labelledby='fileLabel')
-        li(fileMenu="new", data-js="newFile")
+      ul.dropdown-menu(data-js="fileMenu", menuList="file", role='menu', aria-labelledby='fileLabel')
+        li(data-js="newFile", fileMenu="newFile")
             | 新規ファイル
   .dropdown.pull-left
     div#windowLabel(tab="windowMenu", data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
         | ウインドウ
-      ul.dropdown-menu(menuList="file", role='menu', aria-labelledby='windowLabel')
-        li(fileMenu="new", data-js="tool")
+      ul.dropdown-menu(data-js="windowMenu", menuList="file", role='menu', aria-labelledby='windowLabel')
+        li(data-js="showTool", fileMenu="new")
             | ツール
 
 

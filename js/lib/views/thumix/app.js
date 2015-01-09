@@ -20,16 +20,8 @@ define(['jquery', 'backbone', 'templates/thumix/app', 'views/thumix/field'], fun
       });
     };
 
-    AppView.prototype.events = {
-      'click [data-js=destroy]': 'destroy'
-    };
-
     AppView.prototype.renderBoards = function() {
       return this.$el.html(template);
-    };
-
-    AppView.prototype.destroy = function() {
-      return console.log('×ボタンが押されました');
     };
 
     return AppView;

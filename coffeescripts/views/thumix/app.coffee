@@ -9,11 +9,6 @@ define ['jquery', 'backbone', 'templates/thumix/app', 'views/thumix/field'], ($,
       @renderBoards()
       new FieldView(el: $('[data-js=field]'));
 
-    events:
-     'click [data-js=destroy]' : 'destroy'
-
     renderBoards: ->
       @$el.html template
 
-    destroy: ->
-      console.log '×ボタンが押されました'

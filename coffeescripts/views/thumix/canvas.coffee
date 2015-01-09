@@ -4,6 +4,6 @@ define ['jquery', 'backbone', 'templates/thumix/canvas'], ($, Backbone,  templat
       @renderBoards()
 
     renderBoards: ->
-      @$el.append template
+      @$el.html template
 
 

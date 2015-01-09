@@ -17,16 +17,8 @@ define(['jquery', 'backbone', 'views/thumix/header', 'templates/thumix/field'], 
       });
     };
 
-    FieldView.prototype.events = {
-      'click [data-js=destroy]': 'destroy'
-    };
-
     FieldView.prototype.renderBoards = function() {
       return this.$el.html(template);
-    };
-
-    FieldView.prototype.destroy = function() {
-      return console.log('×ボタンが押されました');
     };
 
     return FieldView;
