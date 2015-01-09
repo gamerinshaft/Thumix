@@ -4,7 +4,13 @@ define ['jquery', 'backbone', 'templates/thumix/tool'], ($, Backbone,  template)
       @renderBoards()
       $("[data-js=toolBox]").draggable()
 
+    events:
+      "click [data-js=remove]" : "removeToolBox"
+
     renderBoards: ->
       @$el.html template
+
+    removeToolBox: ->
+      @$el.html ''
 
 

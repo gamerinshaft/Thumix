@@ -79,6 +79,7 @@ section[module="toolBox"] {
 section[module="toolBox"] [parts="header"] {
   height: 13px;
   border-top: solid 1px rgba(200, 200, 200, 0.4);
+  border-bottom: solid 1px #212121;
   border-radius: 5px 5px 0px 0px;
   width: 100%;
   box-sizing: border-box;
@@ -122,6 +123,7 @@ section[module="toolBox"] [function="removeBtn"] {
   section[module="toolBox"] [function="removeBtn"]:hover {
     height: 12px;
     border-radius: 5px 0px 0px 0px;
+    border-right: solid 1px #212121;
     box-sizing: border-box;
     border-top: solid 1px rgba(200, 200, 200, 0.4);
     background: #434343;
@@ -139,8 +141,7 @@ section[module="toolBox"] [function="removeBtn"] {
     background: linear-gradient(to bottom, #434343 0%, #3c3c3c 100%);
     /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgb(67,67,67)', endColorstr='rgb(60,60,60)',GradientType=0 );
-    /* IE6-9 */
-    border-right: solid 1px black; }
+    /* IE6-9 */ }
     section[module="toolBox"] [function="removeBtn"]:hover > .glyphicon {
       font-size: 10px;
       top: 0px; }

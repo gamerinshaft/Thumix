@@ -15,8 +15,16 @@ define(['jquery', 'backbone', 'templates/thumix/tool'], function($, Backbone, te
       return $("[data-js=toolBox]").draggable();
     };
 
+    ToolView.prototype.events = {
+      "click [data-js=remove]": "removeToolBox"
+    };
+
     ToolView.prototype.renderBoards = function() {
       return this.$el.html(template);
+    };
+
+    ToolView.prototype.removeToolBox = function() {
+      return this.$el.html('');
     };
 
     return ToolView;

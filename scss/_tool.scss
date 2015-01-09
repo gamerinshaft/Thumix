@@ -14,6 +14,7 @@ section[module="toolBox"]{
   [parts="header"]{
     height: 13px;
     border-top: solid 1px rgba(200,200,200,0.4);
+    border-bottom: solid 1px rgb(33,33,33);
     border-radius: 5px 5px 0px 0px;
     width: 100%;
     box-sizing: border-box;
@@ -51,6 +52,7 @@ section[module="toolBox"]{
     &:hover{
       height: 12px;
       border-radius: 5px 0px 0px 0px;
+      border-right: solid 1px rgb(33,33,33);
       box-sizing: border-box;
       border-top: solid 1px rgba(200,200,200,0.4);
       background: rgb(67,67,67); /* Old browsers */
@@ -61,7 +63,6 @@ section[module="toolBox"]{
       background: -ms-linear-gradient(top, rgb(67,67,67) 0%,rgb(60,60,60) 100%); /* IE10+ */
       background: linear-gradient(to bottom, rgb(67,67,67) 0%,rgb(60,60,60) 100%); /* W3C */
       filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgb(67,67,67)', endColorstr='rgb(60,60,60)',GradientType=0 ); /* IE6-9 */
-      border-right: solid 1px black;
       & > .glyphicon{
         font-size: 10px;
         top: 0px;
