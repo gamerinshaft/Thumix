@@ -10,7 +10,7 @@ define(['jquery', 'backbone', 'views/thumix/tool'], function($, Backbone, ToolVi
       return WindowMenuView.__super__.constructor.apply(this, arguments);
     }
 
-    WindowMenuView.prototype.initialize = function(opitons) {};
+    WindowMenuView.prototype.initialize = function(options) {};
 
     WindowMenuView.prototype.events = {
       'click [data-js=showTool]': 'showTool'
@@ -19,9 +19,14 @@ define(['jquery', 'backbone', 'views/thumix/tool'], function($, Backbone, ToolVi
     WindowMenuView.prototype.showTool = function(e) {
       e.stopPropagation();
       e.preventDefault();
-      return new ToolView({
+      new ToolView({
         el: $('[data-js=tool]')
       });
+      return this.dropdownToggle();
+    };
+
+    WindowMenuView.prototype.dropdownToggle = function() {
+      return this.$el.dropdown('toggle');
     };
 
     return WindowMenuView;

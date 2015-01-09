@@ -10,7 +10,7 @@ define(['jquery', 'backbone', 'templates/thumix/tool'], function($, Backbone, te
       return ToolView.__super__.constructor.apply(this, arguments);
     }
 
-    ToolView.prototype.initialize = function(opitons) {
+    ToolView.prototype.initialize = function(options) {
       this.renderBoards();
       return $("[data-js=toolBox]").draggable();
     };

@@ -10,7 +10,7 @@ define(['jquery', 'backbone', 'views/thumix/canvas'], function($, Backbone, Canv
       return FileMenuView.__super__.constructor.apply(this, arguments);
     }
 
-    FileMenuView.prototype.initialize = function(opitons) {
+    FileMenuView.prototype.initialize = function(options) {
       this.$window = $(window);
       this.cHeight = parseInt(this.$window.height() * 0.8);
       return this.cWidth = parseInt(this.$window.width() * 0.8);
@@ -23,12 +23,16 @@ define(['jquery', 'backbone', 'views/thumix/canvas'], function($, Backbone, Canv
     FileMenuView.prototype.createCanvas = function(e) {
       e.stopPropagation();
       e.preventDefault();
-      console.log(this.wHeight + "," + this.wWidth);
-      return new CanvasView({
+      new CanvasView({
         el: $('[data-js=canvas]'),
         height: this.cHeight,
         width: this.cWidth
       });
+      return this.dropdownToggle();
+    };
+
+    FileMenuView.prototype.dropdownToggle = function() {
+      return this.$el.dropdown('toggle');
     };
 
     return FileMenuView;

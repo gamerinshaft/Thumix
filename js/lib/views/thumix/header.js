@@ -10,7 +10,7 @@ define(['jquery', 'backbone', 'templates/thumix/header', 'views/thumix/fileMenu'
       return HeaderView.__super__.constructor.apply(this, arguments);
     }
 
-    HeaderView.prototype.initialize = function(opitons) {
+    HeaderView.prototype.initialize = function(options) {
       this.renderBoards();
       new FileMenuView({
         el: $('[data-js=fileMenu]')

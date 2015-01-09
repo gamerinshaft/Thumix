@@ -14,7 +14,7 @@ define(['jquery', 'backbone', 'templates/thumix/canvas'], function($, Backbone, 
       this.width = options.width;
       this.height = options.height;
       this.renderBoards();
-      return this.addProperty;
+      return this.addProperty();
     };
 
     CanvasView.prototype.renderBoards = function() {
@@ -22,7 +22,7 @@ define(['jquery', 'backbone', 'templates/thumix/canvas'], function($, Backbone, 
     };
 
     CanvasView.prototype.addProperty = function() {
-      return this.$el.css({
+      return $('[module="canvasField"]').css({
         width: this.width,
         height: this.height
       });

@@ -9,4 +9,7 @@ define ['jquery', 'backbone', 'views/thumix/tool'], ($, Backbone, ToolView) ->
       e.stopPropagation();
       e.preventDefault();
       new ToolView(el: $('[data-js=tool]'))
+      @dropdownToggle()
 
+    dropdownToggle: ->
+      @$el.dropdown('toggle')

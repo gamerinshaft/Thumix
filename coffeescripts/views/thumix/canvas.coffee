@@ -4,15 +4,14 @@ define ['jquery', 'backbone', 'templates/thumix/canvas'], ($, Backbone,  templat
       @width = options.width
       @height = options.height
       @renderBoards()
-      @addProperty
+      @addProperty()
 
     renderBoards: ->
       @$el.html template
 
     addProperty: ->
-      @$el.css({
+      $('[module="canvasField"]').css
           width: @width
           height: @height
-        })
 
 
