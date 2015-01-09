@@ -39,27 +39,24 @@ html, body {
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgb(50,50,50)', endColorstr='rgb(40,40,40)',GradientType=0 );
   /* IE6-9 */ }
-
-div[tabs] {
-  padding: 0px 10%; }
-
-[tab] {
-  color: #ccc;
-  display: inline-block;
-  height: 100%;
-  font-family: monospace;
-  vertical-align: top;
-  cursor: pointer;
-  padding: 0 10px;
-  line-height: 25px;
-  font-size: 13px; }
-
-[menuList] {
-  border-radius: 0px 0px 5px 5px;
-  padding: 5px 20px;
-  width: 200px;
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.9); }
+  [module="header"] div[tabs] {
+    padding: 0px 10%; }
+  [module="header"] [tab] {
+    color: #ccc;
+    display: inline-block;
+    height: 100%;
+    font-family: monospace;
+    vertical-align: top;
+    cursor: pointer;
+    padding: 0 10px;
+    line-height: 25px;
+    font-size: 13px; }
+  [module="header"] [menuList] {
+    border-radius: 0px 0px 5px 5px;
+    padding: 5px 20px;
+    width: 200px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.9); }
 
 [module="canvasField"] {
   margin: 0 auto;

@@ -1,2 +1,6 @@
-div(parts="tool").
-  tool
+section(data-js="toolBox", module="toolBox")
+  div(parts="header")
+  div(parts="body")
+    div(function="acceptBox").
+      ここにファイルをドラッグまたはクリックでアップロード
+    input(type="file", id="SubmitImage", name="file", style="display:none")

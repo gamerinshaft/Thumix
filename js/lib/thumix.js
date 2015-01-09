@@ -1,6 +1,7 @@
 require.config({
   paths: {
     jquery: '../../bower_components/jquery/dist/jquery',
+    jqueryUI: '../../bower_components/jquery-ui/ui/jquery-ui',
     underscore: '../../bower_components/underscore/underscore',
     bootstrap: '../../bower_components/bootstrap/dist/js/bootstrap',
     backbone: '../../bower_components/backbone/backbone',
@@ -9,11 +10,14 @@ require.config({
   shim: {
     'bootstrap': {
       deps: ["jquery"]
+    },
+    'jqueryUI': {
+      deps: ["jquery"]
     }
   }
 });
 
-require(['jquery', 'bootstrap', 'views/thumix/app'], function($, bootstrap, AppView) {
+require(['jquery', 'jqueryUI', 'bootstrap', 'views/thumix/app'], function($, jqueryUI, bootstrap, AppView) {
   return $(function() {
     return new AppView({
       el: $('[data-js=app]')

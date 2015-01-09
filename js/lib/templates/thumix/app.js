@@ -5,7 +5,7 @@ var buf = [];
 var jade_mixins = {};
 var jade_interp;
 
-buf.push("<section parts=\"field\" data-js=\"field\"></section>");;return buf.join("");
+buf.push("<section module=\"field\" data-js=\"field\"></section>");;return buf.join("");
 };
 
 });

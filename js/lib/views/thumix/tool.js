@@ -11,7 +11,8 @@ define(['jquery', 'backbone', 'templates/thumix/tool'], function($, Backbone, te
     }
 
     ToolView.prototype.initialize = function(opitons) {
-      return this.renderBoards();
+      this.renderBoards();
+      return $("[data-js=toolBox]").draggable();
     };
 
     ToolView.prototype.renderBoards = function() {
