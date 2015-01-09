@@ -12,7 +12,7 @@ section[parts="header"]{
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgb(50,50,50)', endColorstr='rgb(40,40,40)',GradientType=0 ); /* IE6-9 */
 }
 div[tabs]{
-  padding: 0px 130px;
+  padding: 0px 10%;
 }
 [tab]{
   color: #ccc;
@@ -21,7 +21,7 @@ div[tabs]{
   font-family: monospace;
   vertical-align: top;
   cursor: pointer;
-  padding: 0 7px;
+  padding: 0 10px;
   line-height: 25px;
   font-size: 13px
 }

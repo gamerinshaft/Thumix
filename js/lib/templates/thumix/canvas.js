@@ -5,7 +5,7 @@ var buf = [];
 var jade_mixins = {};
 var jade_interp;
 
-buf.push("canvas");;return buf.join("");
+buf.push("<div parts=\"canvasField\">canvas</div>");;return buf.join("");
 };
 
 });
