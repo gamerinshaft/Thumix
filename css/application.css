@@ -16,10 +16,13 @@ html, body {
 
 [module="field"] {
   background-color: #5d5d5d;
+  padding-top: 26px;
   height: 100%;
   width: 100%; }
 
 [module="header"] {
+  position: fixed;
+  top: 0px;
   height: 26px;
   width: 100%;
   box-shadow: -1px -1px 10px 1px rgba(0, 0, 0, 0.8);
