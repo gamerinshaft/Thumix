@@ -19,8 +19,6 @@ define(['jquery', 'backbone', 'views/thumix/canvas'], function($, Backbone, Canv
     FileMenuView.prototype.createCanvas = function(e) {
       e.stopPropagation();
       e.preventDefault();
-      $(window).height();
-      console.log(window.height());
       return new CanvasView({
         el: $('[data-js=canvas]')
       });
