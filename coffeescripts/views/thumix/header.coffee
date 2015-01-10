@@ -2,8 +2,10 @@ define ['jquery', 'backbone', 'templates/thumix/header', 'views/thumix/fileMenu'
   class HeaderView extends Backbone.View
     initialize: (options) ->
       @renderBoards()
+      @tool = options.tool
       new FileMenuView(el: $('[data-js=fileMenu]'))
-      new WindowMenuView(el: $('[data-js=windowMenu]'))
+      new WindowMenuView(el: $('[data-js=windowMenu]'), tool: @tool)
+
       @$(".modal-content").draggable
         scroll: false
         containment:  '[module=field]'

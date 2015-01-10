@@ -1,4 +1,4 @@
-define ['jquery', 'backbone', 'collections/canvases', 'views/thumix/canvases/canvases'], ($, Backbone, Canvases, CanvasesView) ->
+define ['jquery', 'backbone', 'collections/canvases'], ($, Backbone, Canvases) ->
   class FileMenuView extends Backbone.View
     initialize: (options) ->
       # @$modal = $(@$el.children('li').attr('modalClass'))

@@ -1,6 +1,7 @@
-define ['jquery', 'backbone', 'views/thumix/tool'], ($, Backbone, ToolView) ->
+define ['jquery', 'backbone'], ($, Backbone) ->
   class WindowMenuView extends Backbone.View
     initialize: (options) ->
+      @tool = options.tool
 
     events:
       'click [data-js=showTool]' : 'showTool'
@@ -8,8 +9,9 @@ define ['jquery', 'backbone', 'views/thumix/tool'], ($, Backbone, ToolView) ->
     showTool: (e)->
       e.stopPropagation();
       e.preventDefault();
-      new ToolView(el: $('[data-js=tool]'))
+      @tool.set(status: 'show')
       @dropdownToggle()
+
 
     dropdownToggle: ->
       @$el.dropdown('toggle')

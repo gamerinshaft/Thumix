@@ -1,4 +1,4 @@
-define ['jquery', 'backbone', 'templates/thumix/app', 'views/thumix/field'], ($, Backbone,  template, FieldView) ->
+define ['jquery', 'backbone', 'templates/thumix/app', 'views/thumix/header', 'views/thumix/body', 'models/tool'], ($, Backbone,  template, HeaderView, BodyView, Tool) ->
   class AppView extends Backbone.View
     initialize: (options) ->
       aa =
@@ -7,9 +7,10 @@ define ['jquery', 'backbone', 'templates/thumix/app', 'views/thumix/field'], ($,
         '
       console.log(aa)
       @renderBoards()
-      new FieldView(el: $('[data-js=field]'));
-      canvases = new Canvases()
-      @canvas  = new CanvasesView(el: $("[data-js=canvas]"), canvases: canvases)
+      @tool = new Tool()
+      new HeaderView(el: $('[data-js=header]'), tool: @tool);
+      new BodyView(el: $('[data-js=body]'), tool: @tool);
+
     renderBoards: ->
       @$el.html template
 

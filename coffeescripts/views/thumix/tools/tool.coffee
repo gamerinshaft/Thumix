@@ -1,13 +1,19 @@
 define ['jquery', 'backbone', 'templates/thumix/tool'], ($, Backbone,  template) ->
   class ToolView extends Backbone.View
     initialize: (options) ->
-      if @$el.children().length
-        @$el.removeClass "hide"
-      else
-        @renderBoards()
+      @renderBoards()
+      @tool = options.tool
+
+      @tool.on "change", =>
+        switch @tool.get('status')
+          when 'show'
+            @$('[data-js=toolBox]').removeClass 'hide'
+          when 'hidden'
+            @$('[data-js=toolBox]').addClass 'hide'
+
       $("[data-js=toolBox]").draggable
         scroll: false
-        containment:  '[module=field]'
+        containment:  '[module=body]'
 
     events:
       "click [data-js=remove]" : "removeToolBox"
@@ -16,5 +22,4 @@ define ['jquery', 'backbone', 'templates/thumix/tool'], ($, Backbone,  template)
       @$el.html template
 
     removeToolBox: ->
-      @$el.addClass "hide"
-
+      @tool.set(status: 'hidden')
