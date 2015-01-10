@@ -11,12 +11,42 @@ define(['jquery', 'backbone', 'templates/thumix/header', 'views/thumix/fileMenu'
     }
 
     HeaderView.prototype.initialize = function(options) {
+      var $openDropdown, isClick, isOn;
       this.renderBoards();
       new FileMenuView({
         el: $('[data-js=fileMenu]')
       });
-      return new WindowMenuView({
+      new WindowMenuView({
         el: $('[data-js=windowMenu]')
+      });
+      this.$(".modal-content").draggable({
+        scroll: false,
+        containment: '[module=field]'
+      });
+      isOn = true;
+      isClick = false;
+      $openDropdown = '';
+      this.$(".dropdown").on("shown.bs.dropdown", function() {
+        return this.$openDropdown = this;
+      });
+      this.$('[tabs]').on("mouseleave", function() {
+        return isOn = false;
+      });
+      return this.$('.dropdown').on("click", function() {
+        $('[data-js=body]').one("click", function() {
+          isClick = false;
+          return $(this.$openDropdown).dropdown('toggle');
+        });
+        isClick = true;
+        return isOn = true;
+      }).on("mouseleave", function() {
+        if (!isOn) {
+          return isOn = true;
+        }
+      }).on("mouseenter", function() {
+        if (isClick && isOn) {
+          return $(this).children("ul").dropdown('toggle');
+        }
       });
     };
 

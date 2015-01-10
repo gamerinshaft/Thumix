@@ -1,15 +1,28 @@
 div(tabs)
-  .dropdown.pull-left
+  #file.dropdown.pull-left(data-js="dropdown")
     div#fileLabel(tab="fileMenu", data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
         | ファイル
-      ul.dropdown-menu(data-js="fileMenu", menuList="file", role='menu', aria-labelledby='fileLabel')
-        li(data-js="newFile", fileMenu="newFile")
+      ul.dropdown-menu(data-js="fileMenu", menuList="file")
+        li(data-js="openModal", fileMenu="newFile", modalClass="#fileModal")
             | 新規ファイル
-  .dropdown.pull-left
+          #fileModal.modal.fade(data-js="fileModal")
+            .modal-dialog
+              .modal-content
+                .modal-header
+                  h4#fileModalLabel.modal-title 新規キャンバス
+                .modal-body
+                    .label(for="canvasName")
+                        | 名前：
+                    input#canvasName(class="form-control" name="canvasName" type="text" value="新規キャンバス")
+                  div([clear])
+                .modal-footer
+                  button.btn.btn-default(type='button', data-dismiss='modal') キャンセル
+                  button.btn.btn-primary(type='submit', data-js='submit') ＯＫ
+  #window.dropdown.pull-left(data-js="dropdown")
     div#windowLabel(tab="windowMenu", data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
         | ウインドウ
       ul.dropdown-menu(data-js="windowMenu", menuList="file", role='menu', aria-labelledby='windowLabel')
         li(data-js="showTool", fileMenu="new")
             | ツール
-
+  div(clear)
 
