@@ -11,7 +11,11 @@ define(['jquery', 'backbone', 'templates/thumix/tool'], function($, Backbone, te
     }
 
     ToolView.prototype.initialize = function(options) {
-      this.renderBoards();
+      if (this.$el.children().length) {
+        this.$el.removeClass("hide");
+      } else {
+        this.renderBoards();
+      }
       return $("[data-js=toolBox]").draggable({
         scroll: false,
         containment: '[module=field]'
@@ -27,7 +31,7 @@ define(['jquery', 'backbone', 'templates/thumix/tool'], function($, Backbone, te
     };
 
     ToolView.prototype.removeToolBox = function() {
-      return this.$el.html('');
+      return this.$el.addClass("hide");
     };
 
     return ToolView;
