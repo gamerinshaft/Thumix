@@ -3,6 +3,6 @@ section(data-js="toolBox", module="toolBox", class="hide")
     div(data-js="remove", function="removeBtn")
       div(class="glyphicon glyphicon-remove")
   div(parts="body")
-    div(function="acceptBox").
+    div(function="acceptBox", data-js="acceptBox").
       ここにファイルをドラッグまたはクリックでアップロード
-    input(type="file", id="SubmitImage", name="file", style="display:none")
+    input(type="file", data-js="submitImage", name="file", class="hide")

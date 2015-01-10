@@ -15,14 +15,17 @@ define(['jquery', 'backbone', 'templates/thumix/body', 'views/thumix/tools/tool'
       this.tool = options.tool;
       this.canvas = options.canvas;
       this.canvases = options.canvases;
+      this.images = options.images;
       new ToolView({
         el: $('[data-js=tool]'),
-        tool: this.tool
+        tool: this.tool,
+        images: this.images
       });
       return new CanvasesView({
         el: $('[data-js=canvases]'),
         canvas: this.canvas,
-        canvases: this.canvases
+        canvases: this.canvases,
+        images: this.images
       });
     };
 

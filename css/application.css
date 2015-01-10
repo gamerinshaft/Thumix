@@ -246,6 +246,10 @@ html, body {
     width: 100%;
     vertical-align: top; }
 
+[module="canvasField"] {
+  width: 100%;
+  height: 100%; }
+
 section[module="toolBox"] {
   position: absolute;
   top: 10%;
@@ -281,6 +285,7 @@ section[module="toolBox"] [parts="header"] {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgb(50,50,50)', endColorstr='rgb(40,40,40)',GradientType=0 );
   /* IE6-9 */ }
 section[module="toolBox"] [function="acceptBox"] {
+  cursor: pointer;
   font-size: 12px;
   text-align: center;
   border: solid 1px #555;

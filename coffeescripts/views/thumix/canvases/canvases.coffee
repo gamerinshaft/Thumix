@@ -1,14 +1,16 @@
-define ['jquery', 'backbone', 'templates/thumix/canvases','views/thumix/canvases/canvas'], ($, Backbone, template, CanvasView) ->
+define ['jquery', 'backbone', 'templates/thumix/canvases','views/thumix/canvases/canvas', 'views/thumix/image'], ($, Backbone, template, CanvasView, ImageView) ->
   class CanvasesView extends Backbone.View
     initialize: (options) ->
       @canvases = options.canvases
+      @images   = options.images
       @render()
       @listenTo @canvases, 'add', (canvas) =>
         @canvasView = new CanvasView(el: $('[data-js=canvas]'), canvas: canvas)
-        console.log canvas.get('name')
-        console.log 'kitaaa'
-        @canvases.each (b) =>
-          console.log b.get('name')
+
+      @listenTo @images, 'add', (image) =>
+        new ImageView(el: $('[data-js=canvasField]'), image: image)
+
+
 
 
     #   # @width = options.width

@@ -15,6 +15,7 @@ define(['jquery', 'backbone', 'templates/thumix/header', 'views/thumix/fileMenu'
       this.renderDom();
       this.tool = options.tool;
       this.canvases = options.canvases;
+      this.images = options.images;
       new FileMenuView({
         el: $('[data-js=fileMenu]'),
         canvases: this.canvases
