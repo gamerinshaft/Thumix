@@ -1,7 +1,7 @@
 var __hasProp = {}.hasOwnProperty,
   __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-define(['jquery', 'backbone', 'views/thumix/canvas'], function($, Backbone, CanvasView) {
+define(['jquery', 'backbone', 'collections/canvases', 'views/thumix/canvas'], function($, Backbone, Canvases, CanvasView) {
   var FileMenuView;
   return FileMenuView = (function(_super) {
     __extends(FileMenuView, _super);
@@ -11,10 +11,16 @@ define(['jquery', 'backbone', 'views/thumix/canvas'], function($, Backbone, Canv
     }
 
     FileMenuView.prototype.initialize = function(options) {
+      var canvases;
       this.$modal = $(this.$el.children('li').attr('modalClass'));
       this.$window = $(window);
       this.cHeight = parseInt(this.$window.height() * 0.8);
-      return this.cWidth = parseInt(this.$window.width() * 0.8);
+      this.cWidth = parseInt(this.$window.width() * 0.8);
+      canvases = new Canvases();
+      return this.canvas = new CanvasView({
+        el: $("[data-js=canvas]"),
+        canvases: canvases
+      });
     };
 
     FileMenuView.prototype.events = {
@@ -50,11 +56,10 @@ define(['jquery', 'backbone', 'views/thumix/canvas'], function($, Backbone, Canv
       this.$name = this.$('[data-js=canvasName]');
       this.name = this.$name.val();
       this.$name.val('新規キャンバス');
-      return new CanvasView({
-        el: $("[data-js=canvas]"),
+      return this.canvas.createCanvas({
+        name: this.name,
         width: this.cWidth,
-        height: this.cHeight,
-        name: this.name
+        height: this.cHeight
       });
     };
 

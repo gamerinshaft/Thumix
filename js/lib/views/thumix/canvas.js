@@ -14,17 +14,7 @@ define(['jquery', 'backbone', 'models/canvas', 'templates/thumix/canvas'], funct
       this.width = options.width;
       this.height = options.height;
       this.name = options.name;
-      this.renderBoards();
-      this.addProperty();
-      this.canvasModel = new Canvas();
-      this.canvasModel.set({
-        name: this.name,
-        height: this.height,
-        width: this.width
-      });
-      console.log(this.canvasModel.get('name') + 'を保存しました');
-      console.log(this.canvasModel.get('height') + 'を保存しました');
-      return console.log(this.canvasModel.get('width') + 'を保存しました');
+      return this.canvases = options.canvases;
     };
 
     CanvasView.prototype.renderBoards = function() {
@@ -35,6 +25,21 @@ define(['jquery', 'backbone', 'models/canvas', 'templates/thumix/canvas'], funct
       return $('[module="canvasField"]').css({
         width: this.width,
         height: this.height
+      });
+    };
+
+    CanvasView.prototype.createCanvas = function(options) {
+      var canvas;
+      canvas = new Canvas({
+        name: options.name,
+        height: options.height,
+        width: options.width
+      });
+      this.renderBoards();
+      this.addProperty();
+      this.canvases.add(canvas);
+      return this.canvases.each(function(canvas) {
+        return console.log(canvas.get('name'));
       });
     };
 

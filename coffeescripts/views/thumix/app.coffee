@@ -8,7 +8,8 @@ define ['jquery', 'backbone', 'templates/thumix/app', 'views/thumix/field'], ($,
       console.log(aa)
       @renderBoards()
       new FieldView(el: $('[data-js=field]'));
-
+      canvases = new Canvases()
+      @canvas  = new CanvasesView(el: $("[data-js=canvas]"), canvases: canvases)
     renderBoards: ->
       @$el.html template
 
