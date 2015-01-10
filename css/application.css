@@ -17,12 +17,6 @@ html, body {
 [clear] {
   clear: both; }
 
-[module="field"] {
-  background-color: #5d5d5d;
-  padding-top: 26px;
-  height: 100%;
-  width: 100%; }
-
 [module="header"] {
   z-index: 10;
   position: fixed;
@@ -209,12 +203,48 @@ html, body {
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgb(110,110,110)', endColorstr='rgb(95,95,95)',GradientType=0 );
         /* IE6-9 */ }
 
-[module="canvasField"] {
+[module="canvas"] {
+  position: relative;
   margin: 0 auto;
   background-color: whitesmoke;
   width: 80%;
   box-shadow: 0px 1px 0px 1px rgba(0, 0, 0, 0.2);
   border: solid 1px black; }
+
+[module="canvasHead"] {
+  position: relative;
+  margin-top: -21px;
+  border-radius: 4px 4px 0px 0px;
+  height: 21px;
+  padding: 0px;
+  border-bottom: solid 1px #676767;
+  background: #e6e6e6;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #e6e6e6 0%, #bebebe 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #e6e6e6), color-stop(100%, #bebebe));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #e6e6e6 0%, #bebebe 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #e6e6e6 0%, #bebebe 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #e6e6e6 0%, #bebebe 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #e6e6e6 0%, #bebebe 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgb(230,230,230)', endColorstr='rgb(190,190,190)',GradientType=0 );
+  /* IE6-9 */ }
+  [module="canvasHead"] h4 {
+    margin: 0px;
+    color: #444;
+    text-shadow: 1px 1px white;
+    line-height: 1.8;
+    text-align: center;
+    font-weight: normal;
+    font-size: 14px;
+    display: inline-block;
+    width: 100%;
+    vertical-align: top; }
 
 section[module="toolBox"] {
   position: absolute;
@@ -299,6 +329,9 @@ section[module="toolBox"] [function="removeBtn"] {
       top: 0px; }
 
 section[module="app"] {
+  padding-top: 26px;
   height: 100%;
   width: 100%;
-  overflow: hidden; }
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color: #5d5d5d; }

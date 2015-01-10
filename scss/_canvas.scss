@@ -1,7 +1,36 @@
-[module="canvasField"]{
+[module="canvas"]{
+  position: relative;
   margin: 0 auto;
   background-color: whitesmoke;
   width: 80%;
   box-shadow: 0px 1px 0px 1px rgba(0, 0, 0, 0.2);
   border: solid 1px black;
+}
+[module="canvasHead"]{
+  position: relative;
+  margin-top: -21px;
+  border-radius: 4px 4px 0px 0px;
+  height: 21px;
+  padding: 0px;
+  border-bottom: solid 1px rgb(103,103,103);
+  background: rgb(230,230,230); /* Old browsers */
+  background: -moz-linear-gradient(top, rgb(230,230,230) 0%, rgb(190,190,190) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(230,230,230)), color-stop(100%,rgb(190,190,190))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgb(230,230,230) 0%,rgb(190,190,190) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgb(230,230,230) 0%,rgb(190,190,190) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgb(230,230,230) 0%,rgb(190,190,190) 100%); /* IE10+ */
+  background: linear-gradient(to bottom, rgb(230,230,230) 0%,rgb(190,190,190) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgb(230,230,230)', endColorstr='rgb(190,190,190)',GradientType=0 ); /* IE6-9 */
+  h4{
+    margin: 0px;
+    color: #444;
+    text-shadow: 1px 1px white;
+    line-height: 1.8;
+    text-align: center;
+    font-weight: normal;
+    font-size: 14px;
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+  }
 }

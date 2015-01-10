@@ -1,7 +1,7 @@
 var __hasProp = {}.hasOwnProperty,
   __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
 
-define(['jquery', 'backbone', 'collections/canvases', 'views/thumix/canvas'], function($, Backbone, Canvases, CanvasView) {
+define(['jquery', 'backbone', 'models/canvas'], function($, Backbone, Canvas) {
   var FileMenuView;
   return FileMenuView = (function(_super) {
     __extends(FileMenuView, _super);
@@ -11,16 +11,8 @@ define(['jquery', 'backbone', 'collections/canvases', 'views/thumix/canvas'], fu
     }
 
     FileMenuView.prototype.initialize = function(options) {
-      var canvases;
-      this.$modal = $(this.$el.children('li').attr('modalClass'));
-      this.$window = $(window);
-      this.cHeight = parseInt(this.$window.height() * 0.8);
-      this.cWidth = parseInt(this.$window.width() * 0.8);
-      canvases = new Canvases();
-      return this.canvas = new CanvasView({
-        el: $("[data-js=canvas]"),
-        canvases: canvases
-      });
+      this.canvases = options.canvases;
+      return this.$modal = $(this.$el.children('li').attr('modalClass'));
     };
 
     FileMenuView.prototype.events = {
@@ -35,10 +27,6 @@ define(['jquery', 'backbone', 'collections/canvases', 'views/thumix/canvas'], fu
       return this.$modal.modal('show');
     };
 
-    FileMenuView.prototype.dropdownToggle = function() {
-      return this.$el.dropdown('toggle');
-    };
-
     FileMenuView.prototype.stopEvent = function(e) {
       e.preventDefault();
       return e.stopPropagation();
@@ -47,20 +35,25 @@ define(['jquery', 'backbone', 'collections/canvases', 'views/thumix/canvas'], fu
     FileMenuView.prototype.createCanvas = function(e) {
       e.preventDefault();
       e.stopPropagation();
+      this.$name = this.$('[data-js=canvasName]');
       this.$modal.modal('hide');
-      this.$modal.one("hidden.bs.modal", (function(_this) {
+      this.$modal.on("hidden.bs.modal", (function(_this) {
         return function() {
-          return _this.dropdownToggle();
+          _this.dropdownToggle();
+          return _this.$name.val('新規キャンバス');
         };
       })(this));
-      this.$name = this.$('[data-js=canvasName]');
-      this.name = this.$name.val();
-      this.$name.val('新規キャンバス');
-      return this.canvas.createCanvas({
-        name: this.name,
-        width: this.cWidth,
-        height: this.cHeight
+      this.canvas = new Canvas();
+      this.canvas.set({
+        name: this.$name.val(),
+        height: parseInt($(window).height() * 0.8),
+        width: parseInt($(window).width() * 0.8)
       });
+      return this.canvases.add(this.canvas);
+    };
+
+    FileMenuView.prototype.dropdownToggle = function() {
+      return this.$el.dropdown('toggle');
     };
 
     return FileMenuView;

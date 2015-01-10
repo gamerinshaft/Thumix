@@ -12,12 +12,16 @@ define(['jquery', 'backbone', 'templates/thumix/header', 'views/thumix/fileMenu'
 
     HeaderView.prototype.initialize = function(options) {
       var $openDropdown, isClick, isOn;
-      this.renderBoards();
+      this.renderDom();
+      this.tool = options.tool;
+      this.canvases = options.canvases;
       new FileMenuView({
-        el: $('[data-js=fileMenu]')
+        el: $('[data-js=fileMenu]'),
+        canvases: this.canvases
       });
       new WindowMenuView({
-        el: $('[data-js=windowMenu]')
+        el: $('[data-js=windowMenu]'),
+        tool: this.tool
       });
       this.$(".modal-content").draggable({
         scroll: false,
@@ -50,7 +54,7 @@ define(['jquery', 'backbone', 'templates/thumix/header', 'views/thumix/fileMenu'
       });
     };
 
-    HeaderView.prototype.renderBoards = function() {
+    HeaderView.prototype.renderDom = function() {
       return this.$el.html(template);
     };
 

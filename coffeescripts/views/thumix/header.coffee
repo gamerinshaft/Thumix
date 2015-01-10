@@ -1,9 +1,11 @@
 define ['jquery', 'backbone', 'templates/thumix/header', 'views/thumix/fileMenu', 'views/thumix/windowMenu'], ($, Backbone,  template, FileMenuView, WindowMenuView) ->
   class HeaderView extends Backbone.View
     initialize: (options) ->
-      @renderBoards()
+      @renderDom()
       @tool = options.tool
-      new FileMenuView(el: $('[data-js=fileMenu]'))
+      @canvases = options.canvases
+
+      new FileMenuView(el: $('[data-js=fileMenu]'), canvases: @canvases)
       new WindowMenuView(el: $('[data-js=windowMenu]'), tool: @tool)
 
       @$(".modal-content").draggable
@@ -12,8 +14,8 @@ define ['jquery', 'backbone', 'templates/thumix/header', 'views/thumix/fileMenu'
       isOn = true
       isClick = false
       $openDropdown = ''
-      @$(".dropdown")
 
+      @$(".dropdown")
       .on "shown.bs.dropdown", ->
         @$openDropdown = this
 
@@ -37,5 +39,5 @@ define ['jquery', 'backbone', 'templates/thumix/header', 'views/thumix/fileMenu'
         if isClick && isOn
           $(this).children("ul").dropdown('toggle')
 
-    renderBoards: ->
+    renderDom: ->
       @$el.html template

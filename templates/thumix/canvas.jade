@@ -1,1 +1,4 @@
-section(module="canvasField")
+section(module="canvas" style='width: #{canvas.get("width")}px; height: #{canvas.get("height")}px;')
+  section(module="canvasHead")
+    h4 #{canvas.get("name")}
+  section(module="canvasField")

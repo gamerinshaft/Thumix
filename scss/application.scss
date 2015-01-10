@@ -1,11 +1,13 @@
 @import "setting";
-@import "field";
 @import "header";
 @import "canvas";
 @import "tool";
 
 section[module="app"]{
+  padding-top: 26px;
   height: 100%;
   width: 100%;
+  box-sizing: border-box;
   overflow: hidden;
+  background-color: rgb(93,93,93);
 }

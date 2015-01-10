@@ -1,7 +1,7 @@
 define ['jquery', 'backbone', 'templates/thumix/tool'], ($, Backbone,  template) ->
   class ToolView extends Backbone.View
     initialize: (options) ->
-      @renderBoards()
+      @renderDom()
       @tool = options.tool
 
       @tool.on "change", =>
@@ -18,7 +18,7 @@ define ['jquery', 'backbone', 'templates/thumix/tool'], ($, Backbone,  template)
     events:
       "click [data-js=remove]" : "removeToolBox"
 
-    renderBoards: ->
+    renderDom: ->
       @$el.html template
 
     removeToolBox: ->
