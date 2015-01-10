@@ -11,17 +11,20 @@ define(['jquery', 'backbone', 'models/canvas', 'templates/thumix/canvas'], funct
     }
 
     CanvasView.prototype.initialize = function(options) {
-      var model;
       this.width = options.width;
       this.height = options.height;
+      this.name = options.name;
       this.renderBoards();
       this.addProperty();
-      model = new Canvas();
-      console.log(model.get('name'));
-      model.set({
-        name: '値を変更しました'
+      this.canvasModel = new Canvas();
+      this.canvasModel.set({
+        name: this.name,
+        height: this.height,
+        width: this.width
       });
-      return console.log(model.get('name'));
+      console.log(this.canvasModel.get('name') + 'を保存しました');
+      console.log(this.canvasModel.get('height') + 'を保存しました');
+      return console.log(this.canvasModel.get('width') + 'を保存しました');
     };
 
     CanvasView.prototype.renderBoards = function() {

@@ -11,7 +11,9 @@ define(['jquery', 'backbone'], function($, Backbone) {
     }
 
     Canvas.prototype.defaults = {
-      name: 'Canvas.Model'
+      name: 'デフォルト値',
+      height: 0,
+      width: 0
     };
 
     return Canvas;

@@ -3,12 +3,15 @@ define ['jquery', 'backbone', 'models/canvas', 'templates/thumix/canvas'], ($, B
     initialize: (options) ->
       @width = options.width
       @height = options.height
+      @name = options.name
       @renderBoards()
       @addProperty()
-      model = new Canvas()
-      console.log model.get('name')
-      model.set name: '値を変更しました'
-      console.log model.get('name')
+
+      @canvasModel = new Canvas()
+      @canvasModel.set name: @name, height: @height, width: @width
+      console.log  @canvasModel.get('name') + 'を保存しました'
+      console.log  @canvasModel.get('height') + 'を保存しました'
+      console.log  @canvasModel.get('width') + 'を保存しました'
 
     renderBoards: ->
       @$el.html template

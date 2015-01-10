@@ -8,8 +8,9 @@ define ['jquery', 'backbone', 'views/thumix/canvas'], ($, Backbone, CanvasView) 
 
     events:
       'click [data-js=openModal]' : 'openModal'
-      'click [data-js=submit]' : 'createCanvas'
       'click [data-js=fileModal]' : 'stopEvent'
+      'click [data-js=submit]' : 'createCanvas'
+
     openModal: (e)->
       e.preventDefault();
       e.stopPropagation();
@@ -29,4 +30,7 @@ define ['jquery', 'backbone', 'views/thumix/canvas'], ($, Backbone, CanvasView) 
       @$modal.modal('hide')
       @$modal.one "hidden.bs.modal", =>
         @dropdownToggle()
-      console.log "受け取りました。"
+      @$name = @$('[data-js=canvasName]')
+      @name = @$name.val()
+      @$name.val('新規キャンバス')
+      new CanvasView(el: $("[data-js=canvas]"), width: @cWidth, height: @cHeight, name: @name)

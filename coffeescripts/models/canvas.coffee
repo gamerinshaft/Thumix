@@ -1,4 +1,6 @@
 define ['jquery', 'backbone'], ($, Backbone) ->
   class Canvas extends Backbone.Model
     defaults:
-      name: 'Canvas.Model'
+      name: 'デフォルト値'
+      height: 0
+      width:  0

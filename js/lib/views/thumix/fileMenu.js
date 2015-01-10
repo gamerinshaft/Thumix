@@ -19,8 +19,8 @@ define(['jquery', 'backbone', 'views/thumix/canvas'], function($, Backbone, Canv
 
     FileMenuView.prototype.events = {
       'click [data-js=openModal]': 'openModal',
-      'click [data-js=submit]': 'createCanvas',
-      'click [data-js=fileModal]': 'stopEvent'
+      'click [data-js=fileModal]': 'stopEvent',
+      'click [data-js=submit]': 'createCanvas'
     };
 
     FileMenuView.prototype.openModal = function(e) {
@@ -47,7 +47,15 @@ define(['jquery', 'backbone', 'views/thumix/canvas'], function($, Backbone, Canv
           return _this.dropdownToggle();
         };
       })(this));
-      return console.log("受け取りました。");
+      this.$name = this.$('[data-js=canvasName]');
+      this.name = this.$name.val();
+      this.$name.val('新規キャンバス');
+      return new CanvasView({
+        el: $("[data-js=canvas]"),
+        width: this.cWidth,
+        height: this.cHeight,
+        name: this.name
+      });
     };
 
     return FileMenuView;
