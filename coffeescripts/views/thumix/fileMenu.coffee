@@ -1,37 +1,42 @@
-define ['jquery', 'backbone', 'collections/canvases', 'views/thumix/canvases/canvases'], ($, Backbone, Canvases, CanvasesView) ->
+define ['jquery', 'backbone', 'models/canvas'], ($, Backbone, Canvas) ->
   class FileMenuView extends Backbone.View
     initialize: (options) ->
-      # @$modal = $(@$el.children('li').attr('modalClass'))
-      # @cHeight =  parseInt (@$window.height() * 0.8)
-      # @cWidth  =  parseInt (@$window.width() * 0.8)
-      # @$window =  $(window)
+      @canvases = options.canvases
+      @$modal = $(@$el.children('li').attr('modalClass'))
 
-    # events:
-    #   'click [data-js=openModal]' : 'openModal'
-      # 'click [data-js=fileModal]' : 'stopEvent'
-      # 'click [data-js=submit]' : 'createCanvas'
+    events:
+      'click [data-js=openModal]' : 'openModal'
+      'click [data-js=fileModal]' : 'stopEvent'
+      'click [data-js=submit]' : 'createCanvas'
 
-    # openModal: (e)->
-    #   e.preventDefault();
-    #   e.stopPropagation();
-    #   @$modal.modal('show')
+    openModal: (e)->
+      e.preventDefault();
+      e.stopPropagation();
+      @$modal.modal('show')
 
-    # dropdownToggle: ->
-    #   @$el.dropdown('toggle')
+    stopEvent: (e) ->
+      e.preventDefault();
+      e.stopPropagation();
 
-    # stopEvent: (e) ->
-    #   e.preventDefault();
-    #   e.stopPropagation();
+    createCanvas: (e)->
+      e.preventDefault();
+      e.stopPropagation();
+      @$name = @$('[data-js=canvasName]')
+
+      @$modal.modal('hide')
+
+      @$modal.on "hidden.bs.modal", =>
+        @dropdownToggle()
+        @$name.val('新規キャンバス')
+
+      @canvas = new Canvas()
+      @canvas.set
+        name:  @$name.val()
+        height: parseInt($(window).height() * 0.8)
+        width: parseInt ($(window).width() * 0.8)
+      @canvases.add @canvas
 
 
-    # createCanvas: (e)->
-    #   e.preventDefault();
-    #   e.stopPropagation();
-    #   @$modal.modal('hide')
-    #   @$modal.one "hidden.bs.modal", =>
-    #     @dropdownToggle()
-    #   @$name = @$('[data-js=canvasName]')
-    #   @name = @$name.val()
-    #   @$name.val('新規キャンバス')
+    dropdownToggle: ->
+      @$el.dropdown('toggle')
 
-      # @canvas.createCanvas(name: @name, width: @cWidth, height: @cHeight)
