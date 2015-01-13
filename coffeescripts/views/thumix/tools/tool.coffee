@@ -49,7 +49,6 @@ define ['jquery', 'backbone', 'templates/thumix/tool', 'models/image'], ($, Back
       else
         reader.onload = =>
           width = parseInt($(window).width() * 0.1)
-          img_src = $('<img id="image'+ @imageNum + '" class="image" style="width:' + width + 'px">').attr('src', reader.result);
           @image.set
             width: width
             src : reader.result

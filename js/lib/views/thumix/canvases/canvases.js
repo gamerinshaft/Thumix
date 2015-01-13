@@ -25,7 +25,6 @@ define(['jquery', 'backbone', 'templates/thumix/canvases', 'views/thumix/canvase
       return this.listenTo(this.images, 'add', (function(_this) {
         return function(image) {
           return new ImageView({
-            el: $('[data-js=canvasField]'),
             image: image
           });
         };

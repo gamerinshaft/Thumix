@@ -1,5 +1,5 @@
 define ['jquery', 'backbone', 'templates/thumix/canvas'], ($, Backbone, template) ->
-  class CanvasesView extends Backbone.View
+  class CanvasView extends Backbone.View
     initialize: (options) ->
       @canvas = options.canvas
       @render()

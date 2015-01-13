@@ -68,9 +68,8 @@ define(['jquery', 'backbone', 'templates/thumix/tool', 'models/image'], function
       } else {
         reader.onload = (function(_this) {
           return function() {
-            var img_src, width;
+            var width;
             width = parseInt($(window).width() * 0.1);
-            img_src = $('<img id="image' + _this.imageNum + '" class="image" style="width:' + width + 'px">').attr('src', reader.result);
             _this.image.set({
               width: width,
               src: reader.result,

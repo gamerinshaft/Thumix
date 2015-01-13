@@ -1,1 +1,7 @@
-img(id="image" + image.get("order"), class="image", style="width:" + image.get("width") + "px", src = image.get("src"))
+div(id="image" + image.get("order"), module="image", style="width:" + image.get("width") + "px")
+  div(parts="header")
+    div.pull-left(function="removeBtn", image-order="image" + image.get("order"))
+      .glyphicon.glyphicon-remove
+    div(clear)
+  div(parts="body")
+    img(src = image.get("src"))
