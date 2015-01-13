@@ -23,7 +23,17 @@ div(tabs)
     div#windowLabel(tab="windowMenu", data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
         | ウインドウ
       ul.dropdown-menu(data-js="windowMenu", menuList="file", role='menu', aria-labelledby='windowLabel')
-        li(data-js="showTool", fileMenu="new")
+        li(data-js="showTool", windowMenu="tool")
             | ツール
+  #share.dropdown.pull-left(data-js="dropdown")
+    div#showLabel(tab="shareMenu", data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+        | シェア
+      ul.dropdown-menu(data-js="shareMenu", menuList="file", role='menu', aria-labelledby='shareLabel')
+        li(shareMenu="facebook")
+          a(share-Wrap href="http://www.facebook.com/share.php?u=https://gamerinshaft.azurewebsites.net/thumix" onclick="window.open(this.href, 'FBwindow', 'width=650, height=450, menubar=no, toolbar=no, scrollbars=yes'); return false;")
+              | Facebook
+        li(shareMenu="twitter")
+          a(share-Wrap href="http://twitter.com/share?count=horizontal&amp;original_referer=http://gamerinshaft.azurewebsites.net/thumix&amp;text=Web上で簡単に画像合成できるサービスなんじゃ＾〜 &amp;url=http://gamerinshaft.azurewebsites.net/thumix" onclick="window.open(this.href, 'tweetwindow', 'width=550, height=450,personalbar=0,toolbar=0,scrollbars=1,resizable=1'); return false;")
+              | Twitter
   div(clear)
 

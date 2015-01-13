@@ -86,9 +86,16 @@ html, body {
         margin-top: -1px;
         color: white;
         border-bottom: solid 1px #000efd; }
+      [module="header"] [menuList] li [share-Wrap] {
+        width: 100%;
+        background-color: inherit;
+        color: inherit; }
   [module="header"] .modal-dialog {
     width: 615px;
     margin: 70px auto; }
+    @media screen and (max-width: 620px) {
+      [module="header"] .modal-dialog {
+        width: 90%; } }
   [module="header"] .modal-content {
     border-radius: 4px;
     background-color: #494949; }
@@ -201,6 +208,17 @@ html, body {
         /* W3C */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgb(110,110,110)', endColorstr='rgb(95,95,95)',GradientType=0 );
         /* IE6-9 */ }
+
+[project-Title] {
+  font-family: serif;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  z-index: 0;
+  margin: 0;
+  font-size: 50px; }
+  [project-Title] [version] {
+    font-size: 12px; }
 
 section[module="toolBox"] {
   position: absolute;

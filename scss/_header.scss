@@ -57,11 +57,19 @@
         color: white;
         border-bottom: solid 1px rgb(0,14,253);
       }
+      [share-Wrap]{
+        width: 100%;
+        background-color: inherit;
+        color: inherit;
+      }
     }
   }
   .modal-dialog{
     width: 615px;
     margin: 70px auto;
+    @media screen and (max-width: 620px){
+      width: 90%;
+    }
   }
   .modal-content{
     border-radius: 4px;
