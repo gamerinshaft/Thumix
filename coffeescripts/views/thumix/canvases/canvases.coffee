@@ -8,7 +8,10 @@ define ['jquery', 'backbone', 'templates/thumix/canvases','views/thumix/canvases
         @canvasView = new CanvasView(el: $('[data-js=canvas]'), canvas: canvas)
 
       @listenTo @images, 'add', (image) =>
-        new ImageView(image: image)
+        view = new ImageView(image: image)
+        @$("[data-js=canvasField]").append view.renderDom().el
+        view.$el.css
+          height: view.$el.height() + "px"
 
     #   # @width = options.width
     #   # @height = options.height

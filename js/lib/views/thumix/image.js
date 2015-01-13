@@ -10,55 +10,51 @@ define(['jquery', 'backbone', 'templates/thumix/image'], function($, Backbone, t
       return ImageView.__super__.constructor.apply(this, arguments);
     }
 
+    ImageView.prototype.className = 'image';
+
+    ImageView.prototype.tagName = 'i';
+
+    ImageView.prototype.id = function() {
+      return _.uniqueId('image');
+    };
+
+    ImageView.prototype.attributes = {
+      'module': 'image'
+    };
+
     ImageView.prototype.initialize = function(options) {
-      ({
-        className: 'image',
-        tagName: 'div'
-      });
       this.image = options.image;
-      return this.renderDom();
+      return this.$el.css({
+        width: this.image.get("width") + "px"
+      });
     };
 
     ImageView.prototype.events = {
-      "click [function=removeBtn]": "removeImage",
-      "mousedown [function=resizeBtn]": "resizeImage",
-      "mouseup [function=resizeBtn]": "Image"
+      "click [function=removeBtn]": "removeImage"
     };
 
     ImageView.prototype.renderDom = function() {
-      this.$el.append(template({
+      this.$el.html(template({
         image: this.image
       }));
-      return this.$("#image" + this.image.get('order')).css({
-        height: $("#image" + this.image.get('order')).height() + "px"
-      }).draggable({
-        containment: this.$el,
+      this.$el.draggable({
+        containment: $("[module=canvasField]"),
         stack: "[module=image]",
         zIndex: 10
       }).resizable({
-        containment: this.$el,
+        containment: $("[module=canvasField]"),
         minWidth: 50,
         minHeight: 50
       });
+      return this;
     };
 
     ImageView.prototype.removeImage = function(e) {
       e.preventDefault();
       e.stopPropagation();
-      console.log($(this));
-      if (window.confirm($(this).attr("image-order"))) {
+      if (window.confirm("この画像を削除しますか？")) {
         return this.remove();
       }
-    };
-
-    ImageView.prototype.resizeImage = function(e) {
-      console.log("おされたよ");
-      return console.log(e.pageX);
-    };
-
-    ImageView.prototype.Image = function(e) {
-      console.log("はなされたよ");
-      return console.log(e.pageX);
     };
 
     return ImageView;

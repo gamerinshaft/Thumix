@@ -1,48 +1,36 @@
 define ['jquery', 'backbone', 'templates/thumix/image'], ($, Backbone,  template) ->
   class ImageView extends Backbone.View
+    className: 'image'
+    tagName: 'i'
+    id: ->
+     return _.uniqueId('image')
+    attributes: { 'module': 'image' }
+
     initialize: (options) ->
-      className: 'image'
-      tagName: 'div'
-
       @image = options.image
-      @renderDom()
-
+      @$el.css
+        width: @image.get("width") + "px"
 
     events:
       "click [function=removeBtn]" : "removeImage"
-      "mousedown [function=resizeBtn]" : "resizeImage"
-      "mouseup [function=resizeBtn]" : "Image"
 
     renderDom: ->
-      @$el.append template(image: @image)
-      @$("#image" + @image.get('order'))
-      .css
-        height: $("#image" + @image.get('order')).height() + "px"
+      @$el.html template(image: @image)
+      @$el
       .draggable
-        containment: @$el
+        containment: $("[module=canvasField]")
         stack: "[module=image]"
         zIndex: 10
 
       .resizable
-        containment: @$el
+        containment: $("[module=canvasField]")
         minWidth: 50
         minHeight: 50
-
+      @
 
 
     removeImage: (e)->
       e.preventDefault();
       e.stopPropagation();
-      console.log $(this)
-      if window.confirm $(this).attr("image-order")
+      if window.confirm "この画像を削除しますか？"
         @remove()
-
-
-    resizeImage: (e)->
-      console.log "おされたよ"
-      console.log e.pageX
-
-
-    Image: (e)->
-      console.log "はなされたよ"
-      console.log e.pageX
