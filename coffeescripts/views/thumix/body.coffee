@@ -5,8 +5,9 @@ define ['jquery', 'backbone', 'templates/thumix/body', 'views/thumix/tools/tool'
       @tool = options.tool
       @canvas = options.canvas
       @canvases = options.canvases
-      new ToolView(el: $('[data-js=tool]'), tool: @tool)
-      new CanvasesView(el: $('[data-js=canvases]'), canvas: @canvas, canvases: @canvases)
+      @images = options.images
+      new ToolView(el: $('[data-js=tool]'), tool: @tool, images: @images)
+      new CanvasesView(el: $('[data-js=canvases]'), canvas: @canvas, canvases: @canvases, images: @images)
 
     renderDom: ->
       @$el.html template

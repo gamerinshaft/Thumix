@@ -4,6 +4,7 @@ define ['jquery', 'backbone', 'templates/thumix/header', 'views/thumix/fileMenu'
       @renderDom()
       @tool = options.tool
       @canvases = options.canvases
+      @images   = options.images
 
       new FileMenuView(el: $('[data-js=fileMenu]'), canvases: @canvases)
       new WindowMenuView(el: $('[data-js=windowMenu]'), tool: @tool)

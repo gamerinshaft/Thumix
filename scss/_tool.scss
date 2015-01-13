@@ -28,6 +28,7 @@ section[module="toolBox"]{
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgb(50,50,50)', endColorstr='rgb(40,40,40)',GradientType=0 ); /* IE6-9 */
   }
   [function="acceptBox"]{
+    cursor: pointer;
     font-size: 12px;
     text-align: center;
     border: solid 1px #555;
